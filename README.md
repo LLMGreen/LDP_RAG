@@ -49,15 +49,13 @@ LDP_RAG/
 ```
 
 ```text
-datasets/
-└─ dataset-ldp/
-    └─ Data_LDP/
-        ├─ Docs/                    # knowledge base (.docx)
-        ├─ Attack Question/         # prompts to ask the RAG
-        │   ├─ Customer Service/1.json … 10.json
-        │   ├─ E‑commerce/ …
-        │   └─ Healthcare/ …
-        └─ MetaDatas/               # optional extras
+BlendPriv/
+    ├─ Docs/                    # knowledge base (.docx)
+    ├─ Attack Question/         # prompts to ask the RAG
+    │   ├─ Customer Service/1.json … 10.json
+    │   ├─ E‑commerce/ …
+    │   └─ Healthcare/ …
+    └─ MetaDatas/               # optional extras
 ```
 
 ---
@@ -86,9 +84,6 @@ from datasets import load_dataset
 # Load the BlendPriv dataset
 dataset = load_dataset("Dummpy/BlendPriv")
 
-# Access different splits
-train_data = dataset['train']
-test_data = dataset['test']
 ```
 
 ### Dataset Features

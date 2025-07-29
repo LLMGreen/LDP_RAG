@@ -15,14 +15,15 @@
 ## 📚 Table of Contents
 
 1. [Project layout](#-project-layout)
-2. [Installation](#-installation)
-3. [Environment variables](#-environment-variables)
-4. [Quick start](#-quick-start)
-5. [CLI reference](#-cli-reference)
-6. [Output format](#-output-format)
-7. [Extending the pipeline](#-extending-the-pipeline)
-8. [Troubleshooting](#-troubleshooting)
-9. [License](#-license)
+2. [Dataset](#-dataset)
+3. [Installation](#-installation)
+4. [Environment variables](#-environment-variables)
+5. [Quick start](#-quick-start)
+6. [CLI reference](#-cli-reference)
+7. [Output format](#-output-format)
+8. [Extending the pipeline](#-extending-the-pipeline)
+9. [Troubleshooting](#-troubleshooting)
+10. [License](#-license)
 
 ---
 
@@ -58,6 +59,45 @@ datasets/
         │   └─ Healthcare/ …
         └─ MetaDatas/               # optional extras
 ```
+
+---
+
+## 📊 Dataset
+
+This project uses the **BlendPriv** dataset for privacy-aware RAG evaluation. The dataset is hosted on Hugging Face and can be accessed at:
+
+**🔗 Dataset URL:** [https://huggingface.co/datasets/Dummpy/BlendPriv](https://huggingface.co/datasets/Dummpy/BlendPriv)
+
+### Dataset Structure
+
+The BlendPriv dataset contains:
+
+- **Knowledge Base Documents**: Various documents across different domains (Healthcare, E-commerce, Customer Service)
+- **Attack Questions**: Privacy-focused questions designed to test RAG system vulnerabilities
+- **Metadata**: Additional information for evaluation and analysis
+
+### Loading the Dataset
+
+You can load the dataset using the Hugging Face datasets library:
+
+```python
+from datasets import load_dataset
+
+# Load the BlendPriv dataset
+dataset = load_dataset("Dummpy/BlendPriv")
+
+# Access different splits
+train_data = dataset['train']
+test_data = dataset['test']
+```
+
+### Dataset Features
+
+The dataset includes:
+- **Questions**: Privacy-sensitive queries targeting different domains
+- **Context**: Relevant document chunks for RAG retrieval
+- **Labels**: Privacy sensitivity classifications
+- **Domain**: Categorization (Healthcare, E-commerce, Customer Service)
 
 ---
 
